@@ -16,7 +16,6 @@ function App() {
           <h5>Page not found,404 !</h5>
         </Route>
       </Switch>
-
     </Router>
   );
 }
