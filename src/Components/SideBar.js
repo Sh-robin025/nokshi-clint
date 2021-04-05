@@ -5,7 +5,6 @@ import { BsFillGridFill } from 'react-icons/bs';
 import { FaEdit } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { Button } from 'react-bootstrap';
-import AddProduct from './AddProduct';
 
 const SideBar = () => {
     return (

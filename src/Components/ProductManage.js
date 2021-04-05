@@ -12,6 +12,21 @@ const ProductManage = () => {
             .then(data => setProduct(data))
     }, [])
 
+    const handleDelete = (id) => {
+        fetch('https://nokshi.herokuapp.com/delete/' + id, {
+            method: 'DELETE'
+        })
+            .then(result => {
+                if (result.status !== 200) {
+                    alert("try again pls.")
+                } else {
+                    const remainProduct = product.filter(pd => pd._id !== id)
+                    alert("delete success")
+                    setProduct(remainProduct)
+                }
+            })
+    }
+
     return (
         <div className="bg-info col-md-9" style={{ height: '100vh' }}>
             <Container>
@@ -27,7 +42,7 @@ const ProductManage = () => {
                     </thead>
                     <tbody>
                         {
-                            product != null ? product.map(item => <ManagerTable data={item} key={item._id} />) : <Spinner />
+                            product != null ? product.map(item => <ManagerTable data={item} key={item._id} handleDelete={handleDelete} />) : <Spinner />
                         }
                     </tbody>
                 </Table>

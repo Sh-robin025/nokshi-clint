@@ -1,7 +1,12 @@
 import React from 'react';
 import { Card, Button } from 'react-bootstrap';
+import { useHistory } from 'react-router-dom';
 
 const Product = ({ product }) => {
+    const history = useHistory()
+    const handleBuy = () => {
+        history.push(`/checkOut/${product._id}`)
+    }
 
     return (
         <div className="col-md-3">
@@ -12,7 +17,7 @@ const Product = ({ product }) => {
                     <Card.Text>{product.brand}</Card.Text>
                     <h4>$ {product.price}</h4>
                 </Card.Body>
-                <Button variant="primary">Buy Now</Button>
+                <Button variant="primary" onClick={handleBuy}>Buy Now</Button>
             </Card>
         </div>
     );

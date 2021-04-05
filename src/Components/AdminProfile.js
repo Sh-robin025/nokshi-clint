@@ -1,9 +1,14 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { userContext } from '../App';
+import { Image } from 'react-bootstrap';
 
 const AdminProfile = () => {
+    const [user, setUser] = useContext(userContext)
     return (
-        <div>
-            <h2>Admin profile coming soon...</h2>
+        <div className="col-md-9 text-center bg-success">
+            <Image src={user.photoURL} className="mt-5" roundedCircle />
+            <br /><br />
+            <h4>Admin : {user.displayName}</h4>
         </div>
     );
 };

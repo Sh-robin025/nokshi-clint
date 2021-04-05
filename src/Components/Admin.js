@@ -1,6 +1,6 @@
 import React from 'react';
 import SideBar from './SideBar';
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Switch, Route } from "react-router-dom";
 import ProductManage from './ProductManage';
 import AddProduct from './AddProduct';
 import AdminProfile from './AdminProfile';

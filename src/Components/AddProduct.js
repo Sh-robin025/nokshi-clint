@@ -1,12 +1,14 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { Form, Row, Col, Container, Button } from 'react-bootstrap';
 import axios from "axios";
 import { Link } from 'react-router-dom';
 import { AiOutlineFileDone } from 'react-icons/ai';
+import { userContext } from "../App";
 
 const AddProduct = () => {
-    const { register, handleSubmit, watch, errors } = useForm();
+    const [user, setUser] = useContext(userContext);
+    const { register, handleSubmit } = useForm();
     const [imageURL, setImageURL] = useState(null)
     const [response, setResponse] = useState(null)
 
@@ -32,6 +34,7 @@ const AddProduct = () => {
             price: data.price,
             brand: data.brand,
             image: imageURL,
+            author: user.email
         }
         fetch("https://nokshi.herokuapp.com/addProduct", {
             method: 'POST',
