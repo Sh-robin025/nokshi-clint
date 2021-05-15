@@ -12,8 +12,8 @@ const Product = ({ product }) => {
         <div className="col-md-3">
             <Card className="m-3">
                 <Card.Img variant="top" style={{ height: '200px' }} src={product.image} />
-                <Card.Body>
-                    <Card.Title>{product.title}</Card.Title>
+                <Card.Body style={{lineHeight:'0'}}>
+                    <h5>{product.title}</h5>
                     <Card.Text>{product.brand}</Card.Text>
                     <h4>$ {product.price}</h4>
                 </Card.Body>

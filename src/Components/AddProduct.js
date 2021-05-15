@@ -14,7 +14,7 @@ const AddProduct = () => {
 
     const imageHost = (e) => {
         const imageData = new FormData()
-        imageData.set('key', 'c0c27e2c45a2d6cf07a97ef163c77a21');
+        imageData.set('key', '6edb945b9d519c3925e2ad19993929cf');
         imageData.append('image', e.target.files[0]);
 
         axios.post('https://api.imgbb.com/1/upload', imageData)
